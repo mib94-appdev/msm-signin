@@ -36,13 +36,8 @@
           Characters
         </a>
       </li>
-            <li>
-        <a href="/bookmarks">
-          Bookmarks
-        </a>
-      </li>
 
-      <% if session.fetch(:user_id) == nil %>
+      <% if @current_user == nil %>
       <li>
         <a href="/user_sign_up">
           Sign up
@@ -54,6 +49,11 @@
         </a>
       </li>
       <% else %>
+      <li>
+        <a href="/bookmarks">
+          My bookmarks
+        </a>
+      </li>
       <li>
         <a href="/user_sign_out">
           Sign out
